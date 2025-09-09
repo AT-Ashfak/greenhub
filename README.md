@@ -1,169 +1,58 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-006
+1) What is the difference between var, let, and const?
 
-### 📅 Deadline For 60 marks: 9th September, 2025 (11:59 pm ⏱️)
+Answer: 
+Var:  Var is a method of declaring variables, var declared variables are function scoped, which means their scope is constrained to the function in which they
+are specified.
 
-### 📅 Deadline For 50 marks : 13th September , 2025 (6:00 pm⏱️)
+Let:  Let is also a method of declaring variables, let declarations limit variables to the block where they are specified. It is especially helpful for 
+preventing unintentional variable hoisting and lowering the possibility of scope-related errors.
 
-### 📅 Deadline For 30 marks: Any time after 13the September , 2025 (6:01 pm⏱️).
+Const:  Const is a method of declaring variables where the initial value of the variables can not change.
 
----
-# Green Earth
 
+2) What is the difference between map(), forEach(), and filter()?
 
-## Private Repository: https://classroom.github.com/a/nVZrg5R9 
+Answer:
 
-## Alternative Private Repository: https://classroom.github.com/a/KCGI14ST 
+forEach():  forEach() used to iterate over array elements, perform a specified function for each element of the array and doesn't return anything.
 
-## Alternative Private Repository: https://classroom.github.com/a/JMuIYqgK 
+map(): map() is also used to iterate over array elements and creates a new array by applying specified function and return the new array. 
 
+filter():  filter() creates an array containing the elements which satisfy the specified conditon. It returns an array of elements which only 
+satisfy the condition, if no elements match the conditon it returns a empty array.
 
----
-🌴 API Endpoints
----
-1. Get 🌴All Plants
-```bash
-https://openapi.programming-hero.com/api/plants
-```
 
-2. Get 🌴All categories <br/>
-```bash
-https://openapi.programming-hero.com/api/categories
-```
+3) What are arrow functions in ES6?
 
+Answer:
 
-3. Get 🌴plants by categories <br/>
-```bash
-https://openapi.programming-hero.com/api/category/${id}
-```
+Arrow functions are a feature introduced in ECMAScript 6 (ES6) that provide a more concise syntax for writing function expressions in JavaScript.
+They also have different behavior regarding the this keyword compared to traditional function expressions.
 
-```bash
-https://openapi.programming-hero.com/api/category/1
-```
+4) How does destructuring assignment work in ES6?
 
-4. Get 🌴Plants Detail <br/>
+Answer:
 
-```bash
-https://openapi.programming-hero.com/api/plant/${id}
-```
+Destructuring in JavaScript allows you to extract values from arrays or objects and assign them to variables in a concise and readable way. 
+It simplifies code, making it shorter and easier to understand.
+How it works:
+1) It lets you easily grab values from an array and assign them to variables.
+2) making your code easier to read and understand.
+3) You can set a backup value for variables while destructuring. If something is missing or undefined, the default will be used instead.
+4) In arrays, you can choose to ignore certain values while destructuring, focusing only on the ones you need.
 
-```bash
-https://openapi.programming-hero.com/api/plant/1
-```
----
+5) Explain template literals in ES6. How are they different from string concatenation?
 
+Answer:
 
+Template literals are string literals that allow embedded expressions (variables) into your code. They are enclosed by backticks (`) 
+instead of single (') or double (") quotes.
 
+There have many reason that make difference between template literals and string concatenation :
+Syntax: In template literals it enclosed by backticks  and use ${} for embedding expressions.On the other hand concatenation use + operator
+to join the strings.
+Readability: In template literals its more readable, especially for strings with embedded variables or expressions. But in case of concatenation
+Can become less readable when dealing with many variables or complex expressions.
+Multiline Strings: In template literals accept multiline strings natively without the need for special characters.But in concatenation requires 
+explicit newline characters (\n) or separate string literals to create multiline strings.
 
-## ✅ Main Requirements 
-
-#### 1) Navbar
-
-- Website **logo/name** on the **left**  
-- **Menu items** in the **center** 
-- **Plant a Tree button** on the **right** 
-
-#### 2) Banner 
-- A **background image**  
-- A **title** and **subtitle**  
-- A **centered button**  
-
-#### 3) About Campaign
-- **Section heading**  
-- **Image on the left**, **text on the right**  
-
-#### 4) Our Impact Section 
-- Show **3 cards** with campaign **statistics**  
-
-#### 5) Plant a Tree Today Section & Footer
-- **Form**: Name, Email, Number of Trees  
-- **Footer** with copyright info 
-
-#### 6) Responsiveness 
-- Website must be **mobile responsive**  
-
----
-#### 7) Create a README file to answer the following question-
-
-
-#### 1) What is the difference between var, let, and const?
-
-#### 2) What is the difference between map(), forEach(), and filter()? 
-
-#### 3) What are arrow functions in ES6?
-
-#### 4) How does destructuring assignment work in ES6?
-
-#### 5) Explain template literals in ES6. How are they different from string concatenation?
-
-## ⚙️ Functionalities 
-
-1) Category Loading 
-Load Tree Categories dynamically on the left side.
-
-2) Category Click → Tree Data 
-On clicking a category: load trees of that category.
-
-Display in a 3-column card layout.
-
-3) Card Contents 
- Each card includes:
-
-        - Image
-
-        -  Name
-
-        - Short description
-
-        - Category
-
-        - Price
-
-        - Add to Cart button
-
-4) Modal on Card Click 
-Clicking a tree name on a card opens a modal with full tree details.
-
-
-##  🧪 Challenges 
-
-
-    1) Add to Cart 
-    Clicking Add to Cart: - Adds the tree to Cart List
-                          - Shows tree name 
-
-    2) Total Calculation 
-    Calculate total price of trees in cart.
-
-    3) Remove from Cart 
-    Clicking ❌ removes tree and deducts price from total.
-
-    4) Loading Spinner
-    Show spinner while data is loading.
-
-    5) Active Button State 
-    Highlight active category button when selected.
-
-
-
-🧰 Technology Stack:
-        
-        HTML
-
-        CSS (Vanilla / Tailwind / DaisyUI)
-
-        JavaScript (Vanilla only, no frameworks)
-
-📌 Rules
-✅ At least 5 meaningful commits
-
-❌ No dummy text or Lorem Ipsum — must use relevant content
-
-
-
-
-
-## 🔗 Submission
-- **Live Link :** YOUR_DEPLOYED_URL_HERE  
-- **GitHub Private Repository:** YOUR_REPO_URL_HERE  
-
----
