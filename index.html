@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Earth</title>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- DaisyUI & Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="bg-[#F0FDF4]">
+
+    <!-- Navbar -->
+    <nav class="bg-[#15803D]">
+        <div
+            class="flex justify-between items-center py-6 px-32 max-md:flex-col max-md:justify-center max-md:space-y-2.5 inter">
+            <!-- Logo / Brand -->
+            <h3 class="text-white text-2xl font-semibold">Green Earth</h3>
+
+            <!-- Navigation Links -->
+            <div class="flex gap-6 text-white font-[16px] font-normal">
+                <h4>About</h4>
+                <h4>Gallery</h4>
+                <h4>Plant a Tree</h4>
+            </div>
+
+            <!-- Call-to-Action Button -->
+            <button class="bg-[#FACC15] text-[#15803D] py-3 px-5 rounded-4xl font-[16px] font-normal">
+                Plant a Tree
+            </button>
+        </div>
+
+        <!-- Dynamic Categories (populated by JS) -->
+        <ul id="catagory-container" class="flex gap-6 px-32 pb-4 text-white max-md:flex-col max-md:px-5">
+            <!-- JS will inject <li> here -->
+        </ul>
+    </nav>
+    <!-- Banner Section -->
+    <section class="banner flex justify-between text-center items-center bg-[#CFF0DC] inter max-md:py-6 px-5">
+        <div class="align-bottom">
+            <img class="max-md:hidden" src="./assets/hero-leaf1.png" alt="Leaf Image 1" />
+        </div>
+        <div>
+            <h1 class="mb-2 font-bold text-5xl">Plant a Tree, Grow a Future</h1>
+            <p class="mb-6 text-[16px] text-[#1F2937]">
+                Join our mission to plant 1 million trees and make the Earth greener for future generations.
+            </p>
+            <button class="bg-[#FACC15] text-[#15803D] py-3 px-5 rounded-4xl text-[16px] font-normal">
+                Get Involved
+            </button>
+        </div>
+        <div>
+            <img class="max-md:hidden" src="./assets/hero-leaf2.png" alt="Leaf Image 2" />
+        </div>
+    </section>
+
+</body>
+
+</html>
