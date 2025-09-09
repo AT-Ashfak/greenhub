@@ -1,4 +1,11 @@
+// Navbar Categories
 const categoryContainer = document.getElementById("catagory-container");
+
+// Plant Cards Container
+const plantNews = document.getElementById("card");
+
+// Cart array
+let bookmarks = [];
 
 // Load categories from API
 const loadCategory = () => {
@@ -40,20 +47,30 @@ const showCategory = (categories) => {
     });
 };
 
-// Dummy function placeholder for loading plants
-// Keep your existing loadPlantByCategory function here
+// Load plants by category
 const loadPlantByCategory = (id) => {
-    console.log("Load plants for category ID:", id);
+    showLoading();
+    fetch(`https://openapi.programming-hero.com/api/category/${id}`)
+        .then((res) => res.json())
+        .then((data) => {
+            plantDetails(data.plants);
+        })
+        .catch((err) => console.log(err));
 };
 
-// Initialize navbar categories
-loadCategory();
-const plantNews = document.getElementById("card");
+// Load all plants (optional)
+const loadAllPlants = () => {
+    fetch("https://openapi.programming-hero.com/api/plants")
+        .then((res) => res.json())
+        .then((data) => {
+            plantDetails(data.data);
+        })
+        .catch((err) => console.log(err));
+};
 
 // Display plant cards
 const plantDetails = (plants) => {
     plantNews.innerHTML = ""; // Clear previous cards
-
     plants.forEach((plant) => {
         plantNews.innerHTML += `
       <div id="${plant.id}" class="bg-white p-4 rounded-3xl">
@@ -89,11 +106,72 @@ const plantDetails = (plants) => {
     });
 };
 
-// Example: load all plants (existing function in your code)
-const loadAllPlants = () => {
-    fetch("https://openapi.programming-hero.com/api/plants")
-        .then((res) => res.json())
-        .then((data) => {
-            plantDetails(data.data);
-        });
+// Loading spinner
+const showLoading = () => {
+    plantNews.innerHTML = `
+    <div class="h-16 w-full flex items-center gap-10">
+      <h2 class="text-5xl">Loading</h2>
+      <span class="loading loading-spinner loading-xl"></span>
+    </div>
+  `;
 };
+
+// Load plant details in modal
+const loadPlantDetails = (id) => {
+    fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
+        .then((res) => res.json())
+        .then((data) => showPlantDetails(data));
+};
+
+const showPlantDetails = (details) => {
+    const detailsContainer = document.getElementById("details-container");
+    detailsContainer.innerHTML = `
+    <div class="inter">
+      <h2 class="text-[20px] font-semibold">${details.plants.name}</h2>
+      <img class="mb-2.5 mt-2.5 max-h-80 w-full" src="${details.plants.image}" alt="">
+      <p class="text-[14px] font-normal mb-2.5"><span class="font-semibold">Category:</span> ${details.plants.category}</p>
+      <p class="text-[14px] font-normal mb-2.5"><span class="font-semibold">Price: ৳</span>${details.plants.price}</p>
+      <p class="text-[14px] font-normal"><span class="font-semibold">Description:</span> ${details.plants.description}</p>
+    </div>
+  `;
+    document.getElementById("my_modal_1").showModal();
+};
+
+// Add to cart
+const addToCart = (id, name, price) => {
+    bookmarks.push({ id, name, price: Number(price) });
+    renderCart();
+};
+
+// Render cart items
+const renderCart = () => {
+    const cartList = document.getElementById("adding-cart");
+    cartList.innerHTML = "";
+    let total = 0;
+
+    bookmarks.forEach((item, index) => {
+        total += item.price;
+
+        const div = document.createElement("div");
+        div.classList.add("flex", "justify-between", "items-center", "bg-[#F0FDF4]", "px-3", "py-2", "rounded-2xl", "mt-2");
+        div.innerHTML = `
+      <div class="flex flex-col">
+        <h2>${item.name}</h2>
+        <h2>৳${item.price}</h2>
+      </div>
+      <i onclick="removeFromCart(${index})" class="fa-solid fa-xmark cursor-pointer"></i>
+    `;
+        cartList.appendChild(div);
+    });
+
+    document.getElementById("cart-total").innerText = `৳${total}`;
+};
+
+// Remove item from cart
+const removeFromCart = (index) => {
+    bookmarks.splice(index, 1);
+    renderCart();
+};
+
+// Initialize
+loadCategory();
