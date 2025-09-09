@@ -72,6 +72,42 @@
         </div>
     </section>
 
+    <!-- Card Section -->
+    <section class="my-25 inter">
+        <h2 class="text-center text-3xl font-semibold mb-10">Choose Your Trees</h2>
+        <div class="grid max-md:grid-cols-1 grid-cols-12 gap-7.5 max-w-[1650px] mx-auto">
+
+            <!-- Sidebar: Categories (JS handles population) -->
+            <div class="col-span-2 inter font-medium text-[20px] space-y-5 p-5 max-md:text-center max-md:col-span-8">
+                <h4 class="font-semibold text-center">Categories</h4>
+                <ul id="catagory-container">
+                    <!-- JS injects <li> here -->
+                </ul>
+            </div>
+
+            <!-- Main Plant Cards -->
+            <div id="card"
+                class="grid max-md:grid-cols-1 max-md:justify-center max-md:items-center max-md:text-center col-span-8 grid-cols-3 gap-7.5">
+                <!-- JS injects plant cards here -->
+            </div>
+
+            <!-- Cart Section -->
+            <div class="col-span-2 inter bg-white p-4 max-md:col-span-8">
+                <h2 class="font-semibold text-[20px] mb-2">Your Cart</h2>
+                <div id="adding-cart" class="flex flex-col gap-2">
+                    <!-- JS adds cart items here -->
+                </div>
+                <div
+                    class="flex justify-between items-center text-[16px] font-medium mt-2 border-t-2 border-t-gray-200">
+                    <h2>Total:</h2>
+                    <h2 id="cart-total">৳0</h2>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
 </body>
 
 </html>
