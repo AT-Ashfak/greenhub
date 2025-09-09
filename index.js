@@ -48,3 +48,52 @@ const loadPlantByCategory = (id) => {
 
 // Initialize navbar categories
 loadCategory();
+const plantNews = document.getElementById("card");
+
+// Display plant cards
+const plantDetails = (plants) => {
+    plantNews.innerHTML = ""; // Clear previous cards
+
+    plants.forEach((plant) => {
+        plantNews.innerHTML += `
+      <div id="${plant.id}" class="bg-white p-4 rounded-3xl">
+        <div class="flex justify-center max-h-52">
+          <img class="rounded-2xl" src="${plant.image}" alt="${plant.name}" />
+        </div>
+
+        <h4 onclick="loadPlantDetails(${plant.id})" class="font-semibold text-[18px] mb-8 mt-5">
+          ${plant.name}
+        </h4>
+
+        <div class="max-h-24 mb-16">
+          <p class="font-normal text-[12px] text-[#1F2937] mb-5">
+            ${plant.description}
+          </p>
+        </div>
+
+        <div class="flex justify-between items-center mb-3">
+          <button class="bg-[#F0FDF4] text-[#15803D] py-3 px-5 rounded-4xl text-[14px] font-medium">
+            Get Involved
+          </button>
+          <p class="text-[14px] font-semibold text-[#1F2937]">
+            ৳<span>${plant.price}</span>
+          </p>
+        </div>
+
+        <button onclick="addToCart('${plant.id}','${plant.name}','${plant.price}')"
+          class="bg-[#15803D] text-white py-3 px-5 rounded-4xl text-[14px] font-medium w-full">
+          Add to Cart
+        </button>
+      </div>
+    `;
+    });
+};
+
+// Example: load all plants (existing function in your code)
+const loadAllPlants = () => {
+    fetch("https://openapi.programming-hero.com/api/plants")
+        .then((res) => res.json())
+        .then((data) => {
+            plantDetails(data.data);
+        });
+};

@@ -32,27 +32,21 @@
     <nav class="bg-[#15803D]">
         <div
             class="flex justify-between items-center py-6 px-32 max-md:flex-col max-md:justify-center max-md:space-y-2.5 inter">
-            <!-- Logo / Brand -->
             <h3 class="text-white text-2xl font-semibold">Green Earth</h3>
-
-            <!-- Navigation Links -->
             <div class="flex gap-6 text-white font-[16px] font-normal">
                 <h4>About</h4>
                 <h4>Gallery</h4>
                 <h4>Plant a Tree</h4>
             </div>
-
-            <!-- Call-to-Action Button -->
             <button class="bg-[#FACC15] text-[#15803D] py-3 px-5 rounded-4xl font-[16px] font-normal">
                 Plant a Tree
             </button>
         </div>
-
-        <!-- Dynamic Categories (populated by JS) -->
         <ul id="catagory-container" class="flex gap-6 px-32 pb-4 text-white max-md:flex-col max-md:px-5">
             <!-- JS will inject <li> here -->
         </ul>
     </nav>
+
     <!-- Banner Section -->
     <section class="banner flex justify-between text-center items-center bg-[#CFF0DC] inter max-md:py-6 px-5">
         <div class="align-bottom">
@@ -77,7 +71,7 @@
         <h2 class="text-center text-3xl font-semibold mb-10">Choose Your Trees</h2>
         <div class="grid max-md:grid-cols-1 grid-cols-12 gap-7.5 max-w-[1650px] mx-auto">
 
-            <!-- Sidebar: Categories (JS handles population) -->
+            <!-- Sidebar: Categories -->
             <div class="col-span-2 inter font-medium text-[20px] space-y-5 p-5 max-md:text-center max-md:col-span-8">
                 <h4 class="font-semibold text-center">Categories</h4>
                 <ul id="catagory-container">
@@ -107,7 +101,81 @@
         </div>
     </section>
 
+    <!-- About the Campaign -->
+    <section class="inter max-w-[1090px] mx-auto p-10">
+        <h2 class="text-center mb-10 text-3xl font-semibold">About the Campaign</h2>
+        <div class="flex flex-col md:flex-row md:gap-14 items-center gap-7.5">
+            <img class="flex justify-center" src="./assets/about.png" alt="About Image">
+            <div class="text-[16px] font-normal text-[#1F2937]">
+                <p>Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our
+                    start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore
+                    forests, create habitats for wildlife, and combat global warming.</p>
+                <ul class="list-disc">
+                    <li>Restoration of natural habitats</li>
+                    <li>Improvement of air quality</li>
+                    <li>Support for local communities</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
+    <!-- Our Impact -->
+    <section class="inter max-w-[1650px] mx-auto p-10 bg-[#CFF0DC]">
+        <h2 class="text-center mb-10 text-3xl font-semibold">Our Impact</h2>
+        <div class="md:flex md:justify-between md:gap-5">
+            <div class="bg-white p-10 text-center mb-5 w-full text-[#15803D]">
+                <h2 class="font-semibold text-3xl">500K+</h2>
+                <p class="font-normal text-[16px]">Trees Planted</p>
+            </div>
+            <div class="bg-white p-10 text-center mb-5 w-full text-[#15803D]">
+                <h2 class="font-semibold text-3xl">120+</h2>
+                <p class="font-normal text-[16px]">Communities Involved</p>
+            </div>
+            <div class="bg-white p-10 text-center mb-5 w-full text-[#15803D]">
+                <h2 class="font-semibold text-3xl">30+</h2>
+                <p class="font-normal text-[16px]">Countries Reached</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plant a Tree Form -->
+    <section class="inter bg-[#166534] py-25" id="plant-section">
+        <h2 class="text-center mb-10 text-3xl font-semibold text-white">Plant a Tree Today</h2>
+        <div class="max-w-[650px] mx-auto p-10 bg-[#15803D] rounded-2xl">
+            <form class="flex flex-col p-10 gap-3">
+                <input class="p-3 bg-white text-[#1F2937] rounded-[6px]" type="text" placeholder="Your Name">
+                <input class="p-3 bg-white text-[#1F2937] rounded-[6px]" type="email" placeholder="Your Email Address">
+                <select class="p-3 bg-white text-[#1F2937] rounded-[6px]" aria-placeholder="Number of Trees">
+                    <option value="">Number of Trees</option>
+                    <option value="One">One</option>
+                    <option value="Two">Two</option>
+                    <option value="Three">Three</option>
+                </select>
+                <button class="bg-[#FACC15] text-[#15803D] py-3 px-5 rounded-4xl text-[16px] font-normal">Donate
+                    Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#14532D]">
+        <p class="inter text-center text-white py-6">© 2025 Green Earth. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Modal -->
+    <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+            <div id="details-container"></div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- JS -->
+    <script src="./index.js"></script>
 </body>
 
 </html>
